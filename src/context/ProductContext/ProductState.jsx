@@ -13,11 +13,13 @@ export const ProductContext  = createContext(initialState);
 export const ProductProvider = ({children}) => {
     const [state, dispatch] = useReducer(ProductReducer, initialState);
 
+    const API_URL = "http://localhost:3000/products"
+
     const getProducts = async () => {
-        const res = await axios.get("https://rickandmortyapi.com/api/character");
+        const res = await axios.get(API_URL + "/getAll");
         dispatch({
           type: "GET_PRODUCTS",
-          payload: res.data.results,
+          payload: res.data.products,
         });
       };
     
