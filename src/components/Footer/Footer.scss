@@ -1,0 +1,60 @@
+// Colors and Variables
+$primary-color: #1890ff;
+$footer-background: #1a1a1a;
+$text-color: #ffffff;
+$secondary-text: #b3b3b3;
+
+.footer {
+  background-color: $footer-background;
+  color: $text-color;
+  padding: 40px 20px;
+
+  .footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+
+    .footer-section {
+      flex: 1;
+      min-width: 250px;
+      margin: 10px;
+
+      h4 {
+        color: $primary-color;
+        margin-bottom: 16px;
+      }
+
+      p {
+        color: $secondary-text;
+        line-height: 1.5;
+      }
+
+      ul {
+        list-style: none;
+        padding: 0;
+
+        li {
+          margin: 8px 0;
+
+          a {
+            text-decoration: none;
+            color: $text-color;
+
+            &:hover {
+              color: $primary-color;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+    color: $secondary-text;
+    font-size: 14px;
+  }
+}
