@@ -2,12 +2,15 @@ import { Button, Form, Input } from 'antd';
 import { UserContext } from '../../context/UserContext/UserState';
 import { useContext } from 'react';
 import "./Login.scss";
+import { useNavigate } from "react-router-dom"
 
 const Login = () => {
     const {login} = useContext(UserContext)
+    const navigate = useNavigate()
     const onFinish = (values) => {
         console.log('Success:', values);
         login(values)
+        navigate("/")
       };
   return (
     <div className='login-container'> <Form
