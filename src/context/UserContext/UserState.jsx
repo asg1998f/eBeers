@@ -29,6 +29,10 @@ export const UserProvider = ({ children }) => {
     }
   };
 
+  const RegisterNewUser = async(user)=>{
+    const res = await axios.post(API_URL + "create",user)
+  }
+
   const getUserInfo = async () => {
     const token = localStorage.getItem("token");
     const res = await axios.get(API_URL + "/getInfo", {
@@ -65,7 +69,8 @@ export const UserProvider = ({ children }) => {
         user: state.user,
         login,
         getUserInfo,
-        logout
+        logout,
+        RegisterNewUser
       }}
     >
       {children}

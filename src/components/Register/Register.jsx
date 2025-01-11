@@ -1,8 +1,10 @@
 import React, { useContext } from 'react'
 import { UserContext } from '../../context/UserContext/UserState'
+import { useNavigate } from "react-router-dom"
+import { Button, Form, Input } from 'antd';
 
-const RegisterNewUser = () => {
-    const { RegisterNewUser, login} = useContext(UserContext)
+const Register = () => {
+    const { RegisterNewUser} = useContext(UserContext)
     const navigate = useNavigate()
 
     const handleSubmit = async(data)=>{
@@ -80,4 +82,4 @@ const RegisterNewUser = () => {
   )
 }
 
-export default RegisterNewUser
+export default Register
