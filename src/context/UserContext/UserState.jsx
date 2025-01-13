@@ -49,17 +49,20 @@ export const UserProvider = ({ children }) => {
 
   const logout = async () => {
     const token = localStorage.getItem("token");
-    const res = await axios.delete(API_URL + "/logout", {
+    const res = await axios.delete(API_URL + "/logout",  
+    {
       headers: {
-        Authorization: token,
+        authorization: token,
       },
     });
     dispatch({
       type: "LOGOUT",
+      payload: res.data,
     });
     if (res.data) {
-      localStorage.clear();
+      localStorage.removeItem("token");
     }
+
   };
 
   return (
